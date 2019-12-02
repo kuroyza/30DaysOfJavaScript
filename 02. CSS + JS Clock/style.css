@@ -1,0 +1,93 @@
+*,
+*::after,
+*::before {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+html {
+   --color-primary: #EEE;
+   --color-secondary: rgb(212, 14, 14);
+   --color-light: #EEE;
+   --color-light-shadow: rgba(211, 211, 211, .4);
+   --color-dark-shadow: rgba(0, 0, 0, .35);
+}
+
+
+body {
+   background-color: #EEE;
+   height: 100vh;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-image: url(http://wallcoo.net/cartoon/40_Digital_Arts_and_Photo_Manipulations/wallpapers/1920x1200/Dark_world.jpg);
+   background-size: cover;
+   background-position: center;
+}
+
+.clock {
+   position: relative;
+   width: 300px;
+   height: 300px;
+   border-radius: 50%;
+   background-image: linear-gradient(var(--color-dark-shadow), var(--color-dark-shadow)), url(https://pbs.twimg.com/media/D96ALe4XsAsMEYt.jpg);
+   background-size: cover;
+   box-shadow: 0 0 15px var(--color-light-shadow);
+}
+
+.clock__center,
+.clock__center--2{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border-radius: 50%;
+}
+
+.clock__center {
+   width: 6px;
+   height: 6px;
+   background-color: var(--color-light);
+}
+
+
+.clock__center--2 {
+   width: 3px;
+   height: 3px;
+   background-color: var(--color-secondary);
+}
+
+.clock__hand {
+   position: absolute;
+   top: 50%;
+   left: 10%;
+   transform: translateY(-50%);
+   height: 2px;
+   width: 40%;
+   background-color: var(--color-primary);
+   transform-origin: 100%;
+   border-top-right-radius: 2px;
+   border-bottom-right-radius: 2px;
+   box-shadow: 0 1px 2px var(--color-dark-shadow);
+   transition: transform .2s cubic-bezier(0, 1.60, .86, 1);
+}
+
+.clock__hand--hour {
+   width: 25%;
+   left: 25%;
+   transform: translateY(-50%) rotate(30deg);
+}
+
+.clock__hand--min {
+   width: 40%;
+   left: 10%;
+   transform: translateY(-50%) rotate(90deg);
+}
+
+.clock__hand--sec {
+   width: 40%;
+   left: 10%;
+   background-color: var(--color-secondary);
+}
