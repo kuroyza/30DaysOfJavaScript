@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+
+<body>
+   <p onclick="makeGreen()">This is Kuroyza</p>
+
+   <script>
+      const dogs = [{
+         name: 'snickers',
+         age: 2
+      }, {
+         name: 'hugo',
+         age: 8
+      }];
+
+      console.log(dogs);
+      const p = document.querySelector('p');
+
+
+      function makeGreen() {
+         p.style.color = '#BADA55';
+         p.style.fontSize = '50px';
+      }
+
+      // Console Log
+      // -> Regular
+      console.log('Hello There');
+
+      // -> Interpolated
+      console.log('Hello I am a %s string', 'fucking');
+
+      // -> Regular
+      console.log('%c I am Styled text', 'color: greenyellow; text-decoration: underline;');
+
+      // -> Warning
+      console.warn('Oh Noo!');
+
+      // -> Error
+      console.error('Oh Shit!');
+
+      // -> Info
+      console.info('Kuroyza is a gread developer');
+
+      // Testing
+      console.assert(1 === 2, 'This is wrong');
+
+      //Clearing
+      console.clear();
+
+      // Viewing DOM Elements
+      console.dir(p);
+
+      // Grouping together
+      dogs.forEach(dog => {
+         console.group(`${dog.name}`);
+         //console.groupCollapsed(`${dog.name}`);
+         console.log(`This is ${dog.name}`);
+         console.log(`${dog.name} is ${dog.age} years Old`);
+         console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+         console.groupEnd(`${dog.name}`);
+      })
+
+      // Counting
+      console.count('Kuroyza');
+      console.count('Hamza');
+      console.count('Kuroyza');
+      console.count('Hamza');
+      console.count('Kuroyza');
+      console.count('Kuroyza');
+      console.count('Hamza');
+      console.count('Kuroyza');
+
+      // Timing
+
+      console.time('fetching data');
+      fetch('https://api.github.com/users/kuroyza')
+         .then(data => data.json())
+         .then(data => {
+            console.log(data);
+            console.timeEnd('fetching data');
+         });
+
+      // Table
+      console.table(dogs);
+   </script>
+</body>
+
+</html>
